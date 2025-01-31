@@ -1,10 +1,10 @@
-class CircularListNode {
+class SinglyListNode {
     int value;
-    CircularListNode next;
+    SinglyListNode next;
 
-    public CircularListNode(int value) {
+    public SinglyListNode(int value) {
         /**
-         * Initialize a node in the circular linked list.
+         * Initialize a node in the singly linked list.
          *
          * @param value The value to be stored in the node.
          */
@@ -13,12 +13,12 @@ class CircularListNode {
     }
 }
 
-class CircularLinkedList {
-    private CircularListNode head;
+class SinglyLinkedList {
+    private SinglyListNode head;
 
-    public CircularLinkedList() {
+    public SinglyLinkedList() {
         /**
-         * Initialize an empty circular linked list.
+         * Initialize an empty singly linked list.
          */
         this.head = null;
     }
