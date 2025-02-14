@@ -12,26 +12,33 @@ class Array {
         this.data = new int[size];
     }
 
-    public int get(int [] Array,int index) {
+    public int get(int index) {
         /**
          * Get the value at a specific index in the array.
          *
          * @param index The index to retrieve the value from.
          * @return The value at the specified index.
          */
-        return Array[index];
+        if(index>size){
+            return -1;
+        }
+        return data[index];
         // pass
        // return 0;
     }
 
-    public void set(int [] Array,int index, int value) {
+    public void set(int index, int value) {
         /**
          * Set a value at a specific index in the array.
          *
          * @param index The index where the value will be set.
          * @param value The value to be set at the specified index.
          */
-        Array[index]=value;
+        if(index>size){
+            System.out.println("index out of bound");
+        }else{
+        data[index]=value;
+        }
         // pass
     }
 
@@ -45,54 +52,54 @@ class Array {
         // pass
     }
 
-    public void delete(int [] Array,int index) {
+    public void delete(int index) {
         /**
          * Delete the value at a specific index in the array.
          *
          * @param index The index of the value to be deleted.
          */
-        int k=Array.length-1;
+        int k=size-1;
         int [] array=new int[k];
         for(int i=0;i<index;i++){
-            array[i]=Array[i];
+            array[i]=data[i];
         }
         for(int i=index;i<k;i++){
-            array[i]=Array[i+1];
+            array[i]=data[i+1];
         }
         // pass
     }
 
-    public int search(int [] Array,int value) {
+    public int search(int value) {
         /**
          * Search for a value in the array and return its index.
          *
          * @param value The value to search for.
          * @return The index of the value if found, otherwise -1.
          */
-        for(int i=0;i<Array.length;i++){
-            if(Array[i]==value) return i;
+        for(int i=0;i<size;i++){
+            if(data[i]==value) return i;
         }
         // pass
         return -1;
     }
 
-    public int length(int [] Array) {
+    public int length() {
         /**
          * Get the number of elements in the array.
          *
          * @return The number of elements in the array.
          */
         // pass
-        return Array.length;
+        return size;
     }
 
-    public boolean isEmpty(int [] Array) {
+    public boolean isEmpty() {
         /**
          * Check if the array is empty.
          *
          * @return True if the array is empty, False otherwise.
          */
-        if(Array.length==0) return true;
+        if(size==0) return true;
         // pass
         return false;
     }
